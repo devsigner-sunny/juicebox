@@ -10,6 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        "brand-primary": "#CDAAFF",
         "brand-black": "#0C0D10",
       },
       backgroundImage: {

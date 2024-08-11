@@ -4,8 +4,8 @@ import Link from "next/link";
 import { useLayoutEffect } from "react";
 import { useRouter } from "next/navigation";
 import gsap from "gsap";
-import Hexagon from "@/components/Hexagon/Hexagon";
-import Button from "@/components/Button/Button";
+import Hexagon from "@/components/Hexagon/Index";
+import Button from "@/components/Button/Index";
 import { modelAi } from "@/models";
 import { sohne } from "@/fonts";
 
@@ -23,12 +23,12 @@ export default function Home() {
   return (
     <div className="h-full page">
       <div className="relative py-6 ai-talks-wrapper">
-        <Hexagon />
+        <Hexagon bg size="big" />
         <div className="absolute top-0 h-full py-6 translate-x-[-50%] w-full max-w-[390px] mx-auto ai-talks left-1/2">
           {modelAi.map(({ title, className }, index) => (
             <span
               key={index}
-              className={`text-xs relative block ${sohne.className} ${className}`}
+              className={`text-xs absolute block ${sohne.className} ${className}`}
             >
               {title}
             </span>

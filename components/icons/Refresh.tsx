@@ -1,5 +1,6 @@
-import { twMerge } from "tailwind-merge";
-import { IconProps } from "@/app/interfaces";
+interface IconProps {
+  className?: string;
+}
 
 const Refresh = ({ className }: IconProps) => {
   return (

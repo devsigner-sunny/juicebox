@@ -8,7 +8,7 @@ interface ButtonProps {
   label: string;
   href: string;
   className?: string;
-  type?: "primary" | "default" | "ghost" | "invert";
+  type?: "primary" | "default" | "invert";
 }
 
 const Button: FC<ButtonProps> = ({
@@ -26,7 +26,7 @@ const Button: FC<ButtonProps> = ({
     >
       <div
         className={twMerge(
-          `overflow-hidden cursor-pointer text-center self-stretch max-w-full bg-violet-300 rounded-2xl min-h-[60px] shadow-[0px_0px_0px_rgba(255,255,255,0.34)]
+          `__btn
 				`,
           `__btn-${type}`
         )}

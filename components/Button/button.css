@@ -1,5 +1,16 @@
+.__btn {
+  @apply overflow-hidden cursor-pointer text-center self-stretch max-w-full bg-slate-100 rounded-2xl min-h-[60px] shadow-[0px_0px_0px_rgba(255,255,255,0.34)];
+}
 .__btn-primary {
-  @apply text-brand-black bg-violet-300;
+  @apply text-brand-black bg-brand-primary;
+}
+
+.__btn-invert {
+  @apply bg-white text-brand-black outline outline-8 outline-white/25 w-[calc(100%_-_16px)] mx-auto;
+}
+
+.__btn-ghost {
+  @apply bg-transparent border-[1px] border-white;
 }
 
 .start .__btn-primary {

@@ -1,0 +1,18 @@
+.swiper-slide {
+  @apply flex flex-col;
+}
+
+.swiper-pagination {
+  @apply bottom-[122px] !important;
+}
+
+.swiper-pagination-bullet {
+  background: unset;
+}
+.swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+  @apply bg-white/75;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-brand-primary;
+}

@@ -5,27 +5,26 @@ import localFont from "next/font/local";
 const modelAi = [
   {
     title: "WA businesses feel confident about future growth",
-    className: "",
+    className: "top-[10%] left-0",
   },
   {
     title: "AI cant replace creativity",
-    className: "",
+    className: "top-[25%] right-0 text-right",
   },
   {
     title: "Sales measure true success",
-    className: "",
+    className: "top-[40%] left-0",
   },
   {
     title: "Human connection drives WA business",
-    className: "",
+    className: "top-[50%] right-0 text-right",
   },
   {
     title:
       "The primary barrier to digital transformation is financial investment ",
-    className: "",
+    className: "bottom-0 translate-y-[-120%]",
   },
 ];
-
 const modelSwiper = [
   {
     title:

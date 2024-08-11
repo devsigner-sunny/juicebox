@@ -1,4 +1,6 @@
-import { IconProps } from "@/app/interfaces";
+interface IconProps {
+  className?: string;
+}
 
 const ArrowLeft = ({ className }: IconProps) => {
   return (
