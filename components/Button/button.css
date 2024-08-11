@@ -1,0 +1,8 @@
+.__btn-primary {
+  @apply text-brand-black bg-violet-300;
+}
+
+.start .__btn-primary {
+  @apply text-brand-black;
+  background-color: #989ef2;
+}
