@@ -12,6 +12,11 @@ body {
   @apply text-slate-50;
 }
 
+.__main-min-screen-height,
+.template > div {
+  @apply min-h-[calc(100vh_-_86px)];
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

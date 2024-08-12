@@ -14,7 +14,7 @@ const Hexagon: React.FC<HexagonProps> = ({ className, size, bg = false }) => {
     let sizeClass = "";
     switch (size) {
       case "small":
-        return (sizeClass = "max-w-[29px] max-h-[31px]");
+        return (sizeClass = "max-w-[30px] max-h-[30px]");
       case "medium":
         return (sizeClass = "max-w-[146px] max-h-[155px]");
       case "big":

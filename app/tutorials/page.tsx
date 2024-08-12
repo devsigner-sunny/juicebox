@@ -26,7 +26,7 @@ const Tutorials: React.FC = () => {
         pagination={{ type: "bullets", clickable: true }}
         loop={true}
         modules={[Autoplay, Navigation, Pagination]}
-        className="h-full mySwiper"
+        className="__main-min-screen-height"
       >
         {modelSwiper.map(({ title }, index, array) => (
           <SwiperSlide key={index}>

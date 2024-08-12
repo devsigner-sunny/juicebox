@@ -2,7 +2,8 @@ import { useForm } from "react-hook-form";
 import { useFormState } from "@/components/form/FormContext";
 import IconButton from "@/components/IconButton";
 import ArrowTop from "@/components/icons/ArrowTop";
-import Hexagon from "@/components/Hexagon/Index";
+import Lottie from "react-lottie-player";
+import lottieJson from "../../public/Juicebot.json";
 
 type TFormValues = {
   username: string;
@@ -22,13 +23,17 @@ export function UserNameForm() {
   return (
     <>
       <div className="grid pt-6 pb-8 place-items-center">
-        <Hexagon size="small" />
+        <Lottie
+          animationData={lottieJson}
+          play={false}
+          style={{ width: 55, height: 55 }}
+        />
       </div>
       <p className="__form-title">
         Let’s start with the basics. Type in your first name.
       </p>
       <form
-        className="flex flex-col gap-4 mt-auto"
+        className="flex flex-col gap-4 mt-auto py-6"
         onSubmit={handleSubmit(onHandleFormSubmit)}
       >
         <div className="flex flex-col gap-1">

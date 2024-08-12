@@ -19,7 +19,7 @@ const Button: FC<ButtonProps> = ({
   return (
     <div
       className={twMerge(
-        `flex flex-col items-center justify-center w-full pt-6 pb-1 text-base leading-none tracking-wide 
+        `flex flex-col items-center justify-center w-full py-6 text-base leading-none tracking-wide 
 		`,
         props.className
       )}
@@ -33,7 +33,7 @@ const Button: FC<ButtonProps> = ({
       >
         <Link
           href={props.href}
-          className={`p-5 inline-block w-full ${sohne.className}`}
+          className={`p-5 inline-block w-full h-full ${sohne.className}`}
         >
           {label}
         </Link>

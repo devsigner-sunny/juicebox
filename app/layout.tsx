@@ -16,11 +16,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-brand-black h-screen ${bagoss.className}`}
+        className={`bg-brand-black relative ${bagoss.className}`}
         suppressHydrationWarning={true}
       >
         <Header />
-        <main className="p-5 mt-[86px] h-[calc(100vh_-_86px)]">{children}</main>
+        <main className="p-5 pt-[86px] min-h-screen">{children}</main>
       </body>
     </html>
   );

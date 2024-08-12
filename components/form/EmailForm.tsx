@@ -4,38 +4,40 @@ import { useState } from "react";
 import IconButton from "@/components/IconButton";
 import ArrowTop from "@/components/icons/ArrowTop";
 import { Summary } from "@/components/form/Summary";
-import Hexagon from "@/components/Hexagon/Index";
+import Lottie from "react-lottie-player";
+import lottieJson from "../../public/Juicebot.json";
 
 type TFormValues = {
   email: string;
 };
 
 export function EmailForm() {
-  const [isCreated, setCreated] = useState(false);
-  const { setFormData, formData, onHandleBack } = useFormState();
+  const { setFormData, formData, onHandleBack, onHandleNext } = useFormState();
   const { register, handleSubmit } = useForm<TFormValues>({
     defaultValues: formData,
   });
 
   const onHandleFormSubmit = (data: TFormValues) => {
     setFormData((prev: any) => ({ ...prev, ...data }));
-    setCreated(true);
+    onHandleNext();
   };
 
   const cleanedName = JSON.stringify(formData.username).replace(/"/g, "");
 
-  return isCreated ? (
-    <Summary />
-  ) : (
+  return (
     <>
       <div className="grid pt-6 pb-8 place-items-center">
-        <Hexagon size="small" />
+        <Lottie
+          animationData={lottieJson}
+          play={false}
+          style={{ width: 55, height: 55 }}
+        />
       </div>
       <p className="__form-title">
         Let’s start with the basics. Type in your first name.
       </p>
       <form
-        className="flex flex-col gap-4 mt-auto"
+        className="flex flex-col gap-4 mt-auto py-6"
         onSubmit={handleSubmit(onHandleFormSubmit)}
       >
         <div className="flex flex-col gap-1">

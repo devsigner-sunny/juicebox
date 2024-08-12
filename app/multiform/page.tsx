@@ -2,6 +2,7 @@
 import { EmailForm } from "@/components/form/EmailForm";
 import { useFormState } from "@/components/form/FormContext";
 import { UserNameForm } from "@/components/form/UserNameFrom";
+import { Summary } from "@/components/form/Summary";
 
 function ActiveStepFormComponent() {
   const { step } = useFormState();
@@ -10,6 +11,8 @@ function ActiveStepFormComponent() {
       return <UserNameForm />;
     case 2:
       return <EmailForm />;
+    case 3:
+      return <Summary />;
     default:
       return null;
   }
@@ -17,8 +20,8 @@ function ActiveStepFormComponent() {
 
 export default function MultiForm() {
   return (
-      <div className="flex flex-col w-full h-full">
-				<ActiveStepFormComponent />
-      </div>
+    <div className="flex flex-col w-full">
+      <ActiveStepFormComponent />
+    </div>
   );
 }

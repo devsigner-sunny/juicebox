@@ -1,6 +1,7 @@
 "use client";
 
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
+import { useState, useLayoutEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import IconButton from "@/components/IconButton";
@@ -12,12 +13,32 @@ interface HeaderProps {
   className?: string;
 }
 const Header: React.FC<HeaderProps> = ({ children, className }) => {
-  const router = useRouter();
   const pathname = usePathname();
   const hideBackbutton = pathname === "/" ? "invisible" : "visible";
+  const [isSticky, setIsSticky] = useState(false);
+  const headerRef = useRef<HTMLDivElement | null>(null);
+
+  useLayoutEffect(() => {
+    const stickyHeader = () => {
+      if (window.scrollY > 20) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+    window.addEventListener("scroll", stickyHeader);
+
+    return () => {
+      window.addEventListener("scroll", stickyHeader);
+    };
+  }, []);
 
   return (
-    <header className="fixed top-0 flex items-center justify-between w-full gap-10 p-5">
+    <header
+      className={`${
+        isSticky && "bg-brand-black/80"
+      } z-10 fixed top-0 flex items-center justify-between w-full gap-10 p-5`}
+    >
       <IconButton
         className={hideBackbutton}
         Icon={
