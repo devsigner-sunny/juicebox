@@ -25,7 +25,7 @@ const Hexagon: React.FC<HexagonProps> = ({ className, size, bg = false }) => {
   }
 
   return (
-    <>
+    <div className="__hexagon">
       {bg ? (
         <div
           className={twMerge(
@@ -45,14 +45,7 @@ const Hexagon: React.FC<HexagonProps> = ({ className, size, bg = false }) => {
           />
         </div>
       ) : (
-        <div
-          className={twMerge(
-            `grid place-items-center px-12 pb-12 pt-[28px]
-          `,
-            className,
-            getSize()
-          )}
-        >
+        <div className={`${className} ${getSize()}`}>
           <Image
             loading="lazy"
             src="/hexagon.svg"
@@ -62,7 +55,7 @@ const Hexagon: React.FC<HexagonProps> = ({ className, size, bg = false }) => {
           />
         </div>
       )}
-    </>
+    </div>
   );
 };
 

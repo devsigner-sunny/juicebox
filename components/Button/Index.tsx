@@ -19,7 +19,7 @@ const Button: FC<ButtonProps> = ({
   return (
     <div
       className={twMerge(
-        `flex flex-col items-center justify-center w-full py-6 text-base leading-none tracking-wide 
+        `flex flex-col items-center justify-center w-full pt-6 pb-1 text-base leading-none tracking-wide 
 		`,
         props.className
       )}

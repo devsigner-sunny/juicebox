@@ -1,13 +1,10 @@
-interface IconProps {
-  className?: string;
-}
-
-const ArrowLeft = ({ className }: IconProps) => {
+import { IconProps } from "@/app/interfaces";
+const ArrowLeft = ({ className, size = 20 }: IconProps) => {
   return (
     <svg
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
+      width={size}
+      height={size}
+      viewBox={`0 0 ${size} ${size}`}
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
