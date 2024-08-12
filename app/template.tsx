@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { FormProvider } from "@/components/form/FormContext";
+import SmoothScrolling from "@/components/SmoothScrolling";
 import gsap from "gsap";
 
 export default function Template({ children }: { children: React.ReactNode }) {
@@ -10,7 +11,6 @@ export default function Template({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const handleRouteChange = () => {
-      // const timeline = gsap.timeline();
       gsap.to(".template", { opacity: 0, duration: 0.2 });
       gsap.to(".template", { opacity: 1, duration: 0.5 });
     };
@@ -18,8 +18,13 @@ export default function Template({ children }: { children: React.ReactNode }) {
   }, [pathname, searchParams]);
 
   return (
-    <div className="h-full max-w-md mx-auto template">
-      <FormProvider>{children}</FormProvider>
+    <div className="min-h-screen max-w-md mx-auto template">
+      <div className="absolute top-0 left-0 -z-[1] w-full h-full pointer-events-none bg-brand-gradient"></div>
+      <div>
+        <FormProvider>
+          <SmoothScrolling>{children}</SmoothScrolling>
+        </FormProvider>
+      </div>
     </div>
   );
 }
