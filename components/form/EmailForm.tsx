@@ -1,9 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useFormState } from "@/components/form/FormContext";
-import { useState } from "react";
 import IconButton from "@/components/IconButton";
 import ArrowTop from "@/components/icons/ArrowTop";
-import { Summary } from "@/components/form/Summary";
 import Lottie from "react-lottie-player";
 import lottieJson from "../../public/Juicebot.json";
 
@@ -21,8 +19,6 @@ export function EmailForm() {
     setFormData((prev: any) => ({ ...prev, ...data }));
     onHandleNext();
   };
-
-  const cleanedName = JSON.stringify(formData.username).replace(/"/g, "");
 
   return (
     <>

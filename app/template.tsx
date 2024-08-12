@@ -20,7 +20,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen max-w-md mx-auto template">
       <div className="absolute top-0 left-0 -z-[1] w-full h-full pointer-events-none bg-brand-gradient"></div>
-      <div>
+      <div className="__main-min-screen-height">
         <FormProvider>
           <SmoothScrolling>{children}</SmoothScrolling>
         </FormProvider>
