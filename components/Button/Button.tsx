@@ -1,6 +1,5 @@
 import React, { FC, ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
-import Link from "next/link";
 import { sohne } from "@/fonts";
 import "./button.css";
 

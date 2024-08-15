@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useForm } from "@/hooks/use-form";
 import { useFormStep } from "@/hooks/use-form-step";
 import { FormFooter } from "@/components/Form/FormFooter";
+import { FormHeader } from "@/components/Form/FormHeader";
 
 export function Summary() {
   const [submitted, setSubmitted] = useState(false);
@@ -27,9 +28,11 @@ export function Summary() {
 
   return (
     <>
-      <h2>Summary</h2>
-      <h3>name: {nameField.value} </h3>
-      <h3>email: {emailField.value} </h3>
+      <FormHeader>
+        Thanks, {nameField.value}! Now, it’s time to get a reality check. <br />
+        <br />
+        This will take 2-3 minutes. 
+      </FormHeader>
       <FormFooter
         handleGoForwardStep={handleGoForwardStep}
         handleGoBack={handlePreviousStep}

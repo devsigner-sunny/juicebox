@@ -1,12 +1,11 @@
 "use client";
 
-import { Fragment } from "react";
 import { useFormStep } from "@/hooks/use-form-step";
 import { useForm } from "@/hooks/use-form";
 import { ACTIONS } from "@/contexts/form";
-
 import { TextInput } from "@/components/Form/TextInput";
 import { FormFooter } from "@/components/Form/FormFooter";
+import { FormHeader } from "@/components/Form/FormHeader";
 
 export function UserName() {
   const { nameField, dispatchNameField } = useForm();
@@ -34,11 +33,14 @@ export function UserName() {
   }
 
   return (
-    <Fragment>
-      <div className="mt-5 flex flex-col gap-4">
+    <>
+      <FormHeader>
+        Let’s start with the basics. Type in your first name.
+      </FormHeader>
+      <div className="field relative mt-auto">
         <TextInput
-          label="Name"
-          placeholder="e.g. Stephen King"
+          label="First name"
+          placeholder="First name"
           value={nameField.value}
           onChange={(value: string) =>
             dispatchNameField({ type: ACTIONS.SET_VALUE, value })
@@ -47,11 +49,11 @@ export function UserName() {
           clearError={() => dispatchNameField({ type: ACTIONS.CLEAR_ERROR })}
           hasError={nameField.hasError}
         />
+        <FormFooter
+          handleGoForwardStep={handleGoForwardStep}
+          handleGoBack={handlePreviousStep}
+        />
       </div>
-      <FormFooter
-        handleGoForwardStep={handleGoForwardStep}
-        handleGoBack={handlePreviousStep}
-      />
-    </Fragment>
+    </>
   );
 }

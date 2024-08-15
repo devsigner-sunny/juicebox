@@ -1,5 +1,5 @@
 .__btn {
-  @apply overflow-hidden cursor-pointer text-center self-stretch max-w-full bg-slate-100 rounded-2xl min-h-[60px] shadow-[0px_0px_0px_rgba(255,255,255,0.34)];
+  @apply overflow-hidden cursor-pointer text-center self-stretch max-w-full rounded-[18px] min-h-[60px] shadow-[0px_0px_0px_rgba(255,255,255,0.34)];
 }
 .__btn > * {
   @apply min-h-[60px];

@@ -5,6 +5,7 @@ import { ACTIONS } from "@/contexts/form";
 
 import { TextInput } from "@/components/Form/TextInput";
 import { FormFooter } from "@/components/Form/FormFooter";
+import { FormHeader } from "@/components/Form/FormHeader";
 
 export function UserEmail() {
   const { emailField, dispatchEmailField } = useForm();
@@ -43,10 +44,13 @@ export function UserEmail() {
 
   return (
     <>
-      <div className="mt-5 flex flex-col gap-4">
+      <FormHeader>
+        How should we contact you? Type in your email address.
+      </FormHeader>
+      <div className="field relative mt-auto">
         <TextInput
-          label="Email Address"
-          placeholder="e.g. stephenking@lorem.com"
+          label="Email address"
+          placeholder="Email address"
           value={emailField.value}
           onChange={(value: string) =>
             dispatchEmailField({ type: ACTIONS.SET_VALUE, value })
@@ -55,11 +59,11 @@ export function UserEmail() {
           clearError={() => dispatchEmailField({ type: ACTIONS.CLEAR_ERROR })}
           hasError={emailField.hasError}
         />
+        <FormFooter
+          handleGoForwardStep={handleGoForwardStep}
+          handleGoBack={handlePreviousStep}
+        />
       </div>
-      <FormFooter
-        handleGoForwardStep={handleGoForwardStep}
-        handleGoBack={handlePreviousStep}
-      />
     </>
   );
 }

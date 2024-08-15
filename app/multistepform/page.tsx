@@ -8,9 +8,7 @@ export default function MultistepForm() {
   return (
     <FormStepProvider>
       <FormProvider>
-        <section>
-          <FormStep />
-        </section>
+        <FormStep />
       </FormProvider>
     </FormStepProvider>
   );

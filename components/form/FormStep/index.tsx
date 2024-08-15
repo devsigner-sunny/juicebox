@@ -24,9 +24,8 @@ export function FormStep() {
   const { currentStep } = useFormStep();
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full min-h-[517px]">
       <div className="grid pt-6 pb-8 place-items-center">
-        <span>step:: {currentStep}</span>
         <Lottie
           animationData={lottieJson}
           play={currentStep == 3 ? true : false}

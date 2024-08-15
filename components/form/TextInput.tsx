@@ -1,3 +1,5 @@
+import { sohne } from "@/fonts";
+import { useFormStep } from "@/hooks/use-form-step";
 interface TextInputProps {
   label: string;
   placeholder: string;
@@ -23,20 +25,26 @@ export function TextInput({
   }
 
   return (
-    <div className="flex flex-col gap-1">
-      <div className="flex items-center justify-between">
-        <label className="text-brand-black text-xs sm:text-sm	">{label}</label>
-        {hasError && (
-          <span className="text-red text-xs sm:text-sm">{errorMessage}</span>
-        )}
+    <div className="flex flex-col">
+      <div className="flex flex-col items-start">
+        <label className="text-brand-black text-xs h-0 invisible">
+          {label}
+        </label>
+        <span
+          className={`text-red-500 text-sm absolute translate-y-[-100%] transition ${
+            hasError ? "opacity-100" : "opacity-0 top-3"
+          }`}
+        >
+          {errorMessage}
+        </span>
       </div>
       <input
         className={`
-          bg-transparent px-3 py-2 rounded-lg border-[1px] text-brand-black 
+          cursor-pointer bg-transparent min-h-[60px] px-3 py-[19px] rounded-[18px] border-[1px] text-white text-base pr-[43px]
           placeholder:text-white/60 traking-[.2em]
           focus:outline-none focus:border-brand-primary ${
-            hasError ? "border-red" : "border-white/60"
-          }
+            hasError ? "border-red-500" : "border-white/60"
+          } ${sohne.className}
         `}
         type="text"
         placeholder={placeholder}
