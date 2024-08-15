@@ -9,7 +9,7 @@ interface HexagonProps {
   bg?: boolean;
 }
 
-const Hexagon: React.FC<HexagonProps> = ({ className, size, bg = false }) => {
+export function Hexagon({ className, size, bg = false }: HexagonProps) {
   function getSize() {
     let sizeClass = "";
     switch (size) {
@@ -57,6 +57,4 @@ const Hexagon: React.FC<HexagonProps> = ({ className, size, bg = false }) => {
       )}
     </div>
   );
-};
-
-export default Hexagon;
+}

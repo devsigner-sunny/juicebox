@@ -3,11 +3,11 @@ import gsap from "gsap";
 import SplitType from "split-type";
 import React from "react";
 
-interface OpacityText {
+interface OpacityTextProps {
   children: React.ReactNode;
 }
 
-const OpacityText: React.FC<OpacityText> = ({ children }) => {
+export function OpacityText({ children }: OpacityTextProps) {
   const { useLayoutEffect, useRef } = React;
   const component = useRef<HTMLDivElement | null>(null);
   useLayoutEffect(() => {
@@ -32,6 +32,4 @@ const OpacityText: React.FC<OpacityText> = ({ children }) => {
       <p className="__opacity-text text-[22px] tracking-wide">{children}</p>
     </div>
   );
-};
-
-export default OpacityText;
+}

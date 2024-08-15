@@ -1,10 +1,8 @@
 import { createContext, useEffect, useState } from "react";
-// import { useLocalStorage } from '../hooks/use-local-storage';
 
 type FormStepContextData = {
   currentStep: number;
   totalSteps: number;
-  // steps: { title: string; number: number }[];
   handleNextStep: () => void;
   handlePreviousStep: () => void;
   moveToStep(step: number): void;
@@ -25,48 +23,33 @@ interface FormStepProviderProps {
 
 export const FormStepProvider = ({ children }: FormStepProviderProps) => {
   const [currentStep, setCurrentStep] = useState(1);
-	const totalSteps = 3;
-
-  // const [steps, _] = useState([
-  //   { title: 'Your info', number: 1 },
-  //   { title: 'Select plan', number: 2 },
-  //   { title: 'ADD-ONS', number: 3 },
-  //   { title: 'Summary', number: 4 },
-  // ])
-
-  // const { getValueFromLocalStorage, saveValueToLocalStorage } = useLocalStorage()
-
-  // useEffect(() => {
-  //   const step = getValueFromLocalStorage('currentStep')
-  //   if (step) setCurrentStep(step)
-  // }, [getValueFromLocalStorage])
+  const totalSteps = 3;
 
   const handleNextStep = () => {
     const newStepValue = currentStep + 1;
     setCurrentStep(newStepValue);
-    // if (currentStep < steps.length) {
-    //   setCurrentStep(newStepValue);
-    // saveValueToLocalStorage('currentStep', `${newStepValue}`)
-    // };
   };
 
   const handlePreviousStep = () => {
     const newStepValue = currentStep - 1;
-    // setCurrentStep(newStepValue);
     if (currentStep > 1) {
       setCurrentStep(newStepValue);
-      //   saveValueToLocalStorage('currentStep', `${newStepValue}`)
     }
   };
 
   const moveToStep = (step: number) => {
     setCurrentStep(step);
-    // saveValueToLocalStorage('currentStep', `${step}`)
   };
 
   return (
     <FormStepContext.Provider
-      value={{ totalSteps, currentStep, handleNextStep, handlePreviousStep, moveToStep }}
+      value={{
+        totalSteps,
+        currentStep,
+        handleNextStep,
+        handlePreviousStep,
+        moveToStep,
+      }}
     >
       {children}
     </FormStepContext.Provider>

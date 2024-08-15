@@ -27,7 +27,6 @@ body {
 }
 
 .__main-min-screen-height,
-.__main-min-screen-height > div,
 .template > div {
   @apply min-h-[calc(100vh_-_86px)];
 }

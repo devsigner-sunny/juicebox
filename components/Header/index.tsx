@@ -4,9 +4,9 @@ import { usePathname } from "next/navigation";
 import { useState, useLayoutEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import IconButton from "@/components/IconButton";
-import ArrowLeft from "@/components/icons/ArrowLeft";
-import Refresh from "@/components/icons/Refresh";
+import IconButton from "@/components/Header/IconButton";
+import { ArrowLeft } from "@/components/Icons/ArrowLeft";
+import { Refresh } from "@/components/Icons/Refresh";
 
 interface HeaderProps {
   children?: React.ReactNode;

@@ -1,9 +1,9 @@
 "use client";
 import { useEffect } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
-import { FormProvider } from "@/components/form/FormContext";
 import SmoothScrolling from "@/components/SmoothScrolling";
 import gsap from "gsap";
+import { useMediaQuery } from "@/hooks/use-mediaquery";
 
 export default function Template({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -11,20 +11,22 @@ export default function Template({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const handleRouteChange = () => {
-      gsap.to(".template", { opacity: 0, duration: 0.2 });
+      gsap.from(".template", { opacity: 0, duration: 0.2 });
       gsap.to(".template", { opacity: 1, duration: 0.5 });
     };
     handleRouteChange();
   }, [pathname, searchParams]);
 
+  let isPageHeight = useMediaQuery("(min-height: 600px)");
+
   return (
-    <div className="min-h-screen max-w-md mx-auto template">
+    <div
+      className={`${
+        isPageHeight ? "__main-min-screen-height" : "border-red-500"
+      }  max-w-md mx-auto template`}
+    >
       <div className="absolute top-0 left-0 -z-[1] w-full h-full pointer-events-none bg-brand-gradient"></div>
-      <div className="__main-min-screen-height">
-        <FormProvider>
-          <SmoothScrolling>{children}</SmoothScrolling>
-        </FormProvider>
-      </div>
+      <SmoothScrolling>{children}</SmoothScrolling>
     </div>
   );
 }

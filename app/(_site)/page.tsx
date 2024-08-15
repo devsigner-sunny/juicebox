@@ -1,18 +1,17 @@
 "use client";
 
-import Link from "next/link";
 import { useLayoutEffect } from "react";
 import { useRouter } from "next/navigation";
 import gsap from "gsap";
-import Hexagon from "@/components/Hexagon/Index";
-import Button from "@/components/Button/Index";
+import { Hexagon } from "@/components/Hexagon";
+import { LinkButton } from "@/components/Button/LinkButton";
 import { modelAi } from "@/models";
 import { sohne } from "@/fonts";
 
 export default function Home() {
   const router = useRouter();
   useLayoutEffect(() => {
-    gsap.to(".start .__btn-primary", {
+    gsap.to(".start.__btn-primary", {
       backgroundColor: "#c4b5fd",
       delay: 0.2,
       duration: 0.4,
@@ -44,7 +43,7 @@ export default function Home() {
         with current industry opinions.
       </h1>
 
-      <Button
+      <LinkButton
         label="Get a reality check"
         href="/tutorials"
         type="primary"

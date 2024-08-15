@@ -1,20 +1,21 @@
 "use client";
 
+import React from "react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide, useSwiper, SwiperRef } from "swiper/react";
+import { Swiper, SwiperSlide, SwiperRef } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import Button from "@/components/Button/Index";
-import Hexagon from "@/components/Hexagon/Index";
-import OpacityText from "../../components/OpacityText";
-import React from "react";
+
+import { LinkButton } from "@/components/Button/LinkButton";
+import { Hexagon } from "@/components/Hexagon";
+import { OpacityText } from "../../components/OpacityText";
 import { modelSwiper } from "@/models";
+import { Button } from "@/components/Button/Button";
 import "./tutorials.css";
 
-const Tutorials: React.FC = () => {
+export default function Tutorials() {
   const { useRef } = React;
-  const swiper = useSwiper();
   const swiperRef = useRef<SwiperRef>(null);
 
   const slideNext = () => swiperRef?.current?.swiper.slideNext();
@@ -37,24 +38,18 @@ const Tutorials: React.FC = () => {
               <OpacityText>{title}</OpacityText>
             </div>
             {index === array.length - 1 ? (
-              <Button
+              <LinkButton
                 label="Get started"
                 type="invert"
-                href="/multiform"
+                href="/multistepform"
                 className="mt-auto"
               />
             ) : (
-              <div className="flex flex-col items-center justify-center w-full py-6 mt-auto text-base leading-none tracking-wide">
-                <button className="__btn __btn-ghost" onClick={slideNext}>
-                  Continue
-                </button>
-              </div>
+              <Button label="continue" type="ghost" onClick={slideNext} />
             )}
           </SwiperSlide>
         ))}
       </Swiper>
     </>
   );
-};
-
-export default Tutorials;
+}
