@@ -1,9 +1,7 @@
 "use client";
 
 import { Fragment } from "react";
-
 import { useFormStep } from "@/hooks/use-form-step";
-// import { useLocalStorage } from "@/hooks/use-local-storage";
 import { useForm } from "@/hooks/use-form";
 import { ACTIONS } from "@/contexts/form";
 
@@ -14,8 +12,6 @@ export function UserName() {
   const { nameField, dispatchNameField } = useForm();
 
   const { handleNextStep, handlePreviousStep } = useFormStep();
-
-  // const { saveValueToLocalStorage } = useLocalStorage();
 
   function validateForm() {
     let formHasError = false;
@@ -33,12 +29,6 @@ export function UserName() {
   function handleGoForwardStep() {
     const isValid = validateForm();
     if (isValid) {
-      // saveValueToLocalStorage(
-      //   "user-info",
-      //   JSON.stringify({
-      //     name: nameField.value,
-      //   })
-      // );
       handleNextStep();
     }
   }

@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useForm } from "@/hooks/use-form";
 import { useFormStep } from "@/hooks/use-form-step";
@@ -26,7 +26,7 @@ export function Summary() {
   }, [submitted, moveToStep]);
 
   return (
-    <Fragment>
+    <>
       <h2>Summary</h2>
       <h3>name: {nameField.value} </h3>
       <h3>email: {emailField.value} </h3>
@@ -34,6 +34,6 @@ export function Summary() {
         handleGoForwardStep={handleGoForwardStep}
         handleGoBack={handlePreviousStep}
       />
-    </Fragment>
+    </>
   );
 }

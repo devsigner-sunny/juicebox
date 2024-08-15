@@ -17,16 +17,30 @@ export function Button({
   ...props
 }: ButtonProps) {
   return (
-    <div className={twMerge(`__btn __btn-${type}`, props.className)}>
-      <button
-        role="button"
-        autoFocus
-        aria-label={label}
-        onClick={props.onClick}
-        className={`p-5 inline-block w-full h-full ${sohne.className}`}
+    <div
+      className={twMerge(
+        `flex flex-col items-center justify-center w-full py-6 text-base leading-none tracking-wide 
+	`,
+        props.className
+      )}
+    >
+      <div
+        className={twMerge(
+          `__btn
+			`,
+          `__btn-${type}`
+        )}
       >
-        {label}
-      </button>
+        <button
+          role="button"
+          autoFocus
+          aria-label={label}
+          onClick={props.onClick}
+          className={`p-5 inline-block w-full h-full ${sohne.className}`}
+        >
+          {label}
+        </button>
+      </div>
     </div>
   );
 }

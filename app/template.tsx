@@ -11,7 +11,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const handleRouteChange = () => {
-      gsap.from(".template", { opacity: 0, duration: 0.2 });
+      gsap.to(".template", { opacity: 0, duration: 0.2 });
       gsap.to(".template", { opacity: 1, duration: 0.5 });
     };
     handleRouteChange();
@@ -23,7 +23,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
     <div
       className={`${
         isPageHeight ? "__main-min-screen-height" : "border-red-500"
-      }  max-w-md mx-auto template`}
+      }  max-w-[390px] mx-auto template`}
     >
       <div className="absolute top-0 left-0 -z-[1] w-full h-full pointer-events-none bg-brand-gradient"></div>
       <SmoothScrolling>{children}</SmoothScrolling>

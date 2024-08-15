@@ -17,7 +17,6 @@ import "./tutorials.css";
 export default function Tutorials() {
   const { useRef } = React;
   const swiperRef = useRef<SwiperRef>(null);
-
   const slideNext = () => swiperRef?.current?.swiper.slideNext();
 
   return (
@@ -25,13 +24,13 @@ export default function Tutorials() {
       <Swiper
         ref={swiperRef}
         pagination={{ type: "bullets", clickable: true }}
-        loop={true}
-        modules={[Autoplay, Navigation, Pagination]}
-        className="__main-min-screen-height"
+        observer
+        shortSwipes={false}
+        modules={[Navigation, Pagination]}
       >
-        {modelSwiper.map(({ title }, index, array) => (
-          <SwiperSlide key={index}>
-            <div className="px-12 pb-12 pt-[20px]">
+        {modelSwiper.map(({ id, title }, index, array) => (
+          <SwiperSlide key={id}>
+            <div className="p-12">
               <Hexagon size="medium" bg />
             </div>
             <div className="text-center">
@@ -45,7 +44,12 @@ export default function Tutorials() {
                 className="mt-auto"
               />
             ) : (
-              <Button label="continue" type="ghost" onClick={slideNext} />
+              <Button
+                label="Continue"
+                type="ghost"
+                onClick={slideNext}
+                className="mt-auto"
+              />
             )}
           </SwiperSlide>
         ))}

@@ -11,7 +11,6 @@ type FormStepContextData = {
 export const FormStepContext = createContext({
   currentStep: 2,
   totalSteps: 0,
-  // steps: [],
   handleNextStep: () => {},
   handlePreviousStep: () => {},
   moveToStep: () => {},

@@ -1,11 +1,11 @@
 .swiper-slide {
-  @apply flex flex-col;
+  @apply flex flex-col min-h-[571px];
 }
 
-.swiper-wrapper,
+/* .swiper-wrapper,
 .swiper-slide {
 	@apply min-h-[calc(100vh_-_86px)];
-}
+} */
 .swiper-pagination {
   @apply bottom-[122px] !important;
 }
