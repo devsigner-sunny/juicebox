@@ -15,6 +15,7 @@ export function FormFooter({ handleGoForwardStep }: FormFooterProps) {
     <>
       {isLastStep ? (
         <Button
+          autoFocus
           label="Continue"
           type="invert"
           onClick={handleGoForwardStep}

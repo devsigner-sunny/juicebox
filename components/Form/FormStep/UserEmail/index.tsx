@@ -6,6 +6,7 @@ import { ACTIONS } from "@/contexts/form";
 import { TextInput } from "@/components/Form/TextInput";
 import { FormFooter } from "@/components/Form/FormFooter";
 import { FormHeader } from "@/components/Form/FormHeader";
+import { FieldWrapper } from "@/components/Form/FieldWrapper";
 
 export function UserEmail() {
   const { emailField, dispatchEmailField } = useForm();
@@ -47,7 +48,7 @@ export function UserEmail() {
       <FormHeader>
         How should we contact you? Type in your email address.
       </FormHeader>
-      <div className="field relative mt-auto">
+      <FieldWrapper>
         <TextInput
           label="Email address"
           placeholder="Email address"
@@ -63,7 +64,7 @@ export function UserEmail() {
           handleGoForwardStep={handleGoForwardStep}
           handleGoBack={handlePreviousStep}
         />
-      </div>
+      </FieldWrapper>
     </>
   );
 }

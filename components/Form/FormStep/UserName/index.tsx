@@ -6,6 +6,7 @@ import { ACTIONS } from "@/contexts/form";
 import { TextInput } from "@/components/Form/TextInput";
 import { FormFooter } from "@/components/Form/FormFooter";
 import { FormHeader } from "@/components/Form/FormHeader";
+import { FieldWrapper } from "@/components/Form/FieldWrapper";
 
 export function UserName() {
   const { nameField, dispatchNameField } = useForm();
@@ -37,7 +38,7 @@ export function UserName() {
       <FormHeader>
         Let’s start with the basics. Type in your first name.
       </FormHeader>
-      <div className="field relative mt-auto">
+      <FieldWrapper>
         <TextInput
           label="First name"
           placeholder="First name"
@@ -53,7 +54,7 @@ export function UserName() {
           handleGoForwardStep={handleGoForwardStep}
           handleGoBack={handlePreviousStep}
         />
-      </div>
+      </FieldWrapper>
     </>
   );
 }

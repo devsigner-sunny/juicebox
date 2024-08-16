@@ -24,7 +24,7 @@ export function FormStep() {
   const { currentStep } = useFormStep();
 
   return (
-    <div className="flex flex-col w-full min-h-[517px]">
+    <div className="flex flex-col w-full min-h-viewHeight">
       <div className="grid pt-6 pb-8 place-items-center">
         <Lottie
           animationData={lottieJson}

@@ -13,11 +13,3 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-### Todo
-
-- Multiform: Tidy up
-  - FormTemplate (includes Lottie)
-  - InputText
-  - Style
-- Home : maybe some animation on Hexagon? and ai talks texts?

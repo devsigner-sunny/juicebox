@@ -20,7 +20,7 @@ export default function Home() {
   });
 
   return (
-    <div className="min-h-[calc(100vh_-_86px)] flex flex-col">
+    <div className="min-h-viewHeight flex flex-col">
       <div className="relative py-6 ai-talks-wrapper">
         <Hexagon bg size="big" />
         <div className="absolute top-0 h-full py-6 translate-x-[-50%] w-full max-w-[390px] mx-auto ai-talks left-1/2">
@@ -47,7 +47,7 @@ export default function Home() {
         label="Get a reality check"
         href="/tutorials"
         type="primary"
-        className="start"
+        className="start mt-auto"
       />
     </div>
   );

@@ -9,6 +9,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      spacing: {
+        viewHight: "575px",
+      },
+      minHeight: {
+        viewHeight: "575px",
+      },
       colors: {
         "brand-primary": "#CDAAFF",
         "brand-black": "#0C0D10",
