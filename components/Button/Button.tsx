@@ -5,6 +5,7 @@ import "./button.css";
 
 interface ButtonProps {
   label: string;
+	autoFocus: boolean;
   onClick: () => void;
   className?: string;
   type: "primary" | "default" | "invert" | "ghost";
@@ -13,12 +14,14 @@ interface ButtonProps {
 export function Button({
   label = "button",
   type = "default",
+	autoFocus = true,
   ...props
 }: ButtonProps) {
+  
   return (
     <div
       className={twMerge(
-        `flex flex-col items-center justify-center w-full py-6 text-base leading-none tracking-wide 
+        `flex flex-col items-center justify-center w-full py-6 text-base leading-[1.35em] tracking-[.02em] 
 	`,
         props.className
       )}
@@ -32,7 +35,7 @@ export function Button({
       >
         <button
           role="button"
-          autoFocus
+          autoFocus={autoFocus}
           aria-label={label}
           onClick={props.onClick}
           className={`p-5 inline-block w-full h-full ${sohne.className}`}

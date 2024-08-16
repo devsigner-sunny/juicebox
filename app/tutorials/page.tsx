@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide, SwiperRef } from "swiper/react";
+import { Swiper, SwiperSlide, SwiperRef, useSwiper } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -24,9 +24,8 @@ export default function Tutorials() {
       <Swiper
         ref={swiperRef}
         pagination={{ type: "bullets", clickable: true }}
-        observer
-        shortSwipes={false}
-        modules={[Navigation, Pagination]}
+        loop
+        modules={[Autoplay, Navigation, Pagination]}
       >
         {modelSwiper.map(({ id, title }, index, array) => (
           <SwiperSlide key={id}>
@@ -44,12 +43,15 @@ export default function Tutorials() {
                 className="mt-auto"
               />
             ) : (
-              <Button
-                label="Continue"
-                type="ghost"
-                onClick={slideNext}
-                className="mt-auto"
-              />
+              <>
+                <Button
+                  label="Continue"
+                  type="ghost"
+                  autoFocus={false}
+                  onClick={slideNext}
+                  className="mt-auto"
+                />
+              </>
             )}
           </SwiperSlide>
         ))}
